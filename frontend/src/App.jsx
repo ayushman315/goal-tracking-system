@@ -17,7 +17,7 @@ const App = () => {
   };
 
   return (
-    <Router>
+   
       <div>
         {token ? (
           <>
@@ -34,7 +34,7 @@ const App = () => {
           </Routes>
         )}
       </div>
-    </Router>
+   
   );
 };
 
