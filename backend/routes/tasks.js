@@ -39,9 +39,10 @@ router.get('/:goalId', authenticateJWT, async (req, res) => {
   }
 });
 
+// Update task status route
 router.put('/:taskId', authenticateJWT, async (req, res) => {
-  const { title, description, quantity, frequency, days_of_week, reminder } = req.body;
-
+  const { completed } = req.body;
+  
   try {
     const task = await Task.findById(req.params.taskId);
     if (!task) {
@@ -53,19 +54,16 @@ router.put('/:taskId', authenticateJWT, async (req, res) => {
       return res.status(404).json({ msg: 'Goal not found' });
     }
 
-    task.title = title || task.title;
-    task.description = description || task.description;
-    task.quantity = quantity || task.quantity;
-    task.frequency = frequency || task.frequency;
-    task.days_of_week = days_of_week || task.days_of_week;
-    task.reminder = reminder || task.reminder;
-
+    task.completed = completed !== undefined ? completed : task.completed;
     await task.save();
+    
     res.json(task);
   } catch (err) {
-    res.status(500).send('Server error');
+    console.error(err.message);
+    res.status(500).send('Server Error');
   }
 });
+
 
 router.delete('/:taskId', authenticateJWT, async (req, res) => {
   try {

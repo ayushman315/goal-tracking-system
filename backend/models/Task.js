@@ -1,7 +1,11 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const TaskSchema = new mongoose.Schema({
-  goal_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Goal', required: true },
+  goal_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Goal",
+    required: true,
+  },
   title: { type: String, required: true },
   description: { type: String },
   quantity: { type: Number, required: true },
@@ -9,9 +13,14 @@ const TaskSchema = new mongoose.Schema({
   days_of_week: [{ type: String }], // e.g., ["Monday", "Wednesday"]
   reminder: {
     enabled: { type: Boolean, default: false },
-    time: { type: Date }
+    time: { type: Date },
   },
-  created_at: { type: Date, default: Date.now }
+  completed: {
+    type: Boolean,
+    default: false,
+  },
+
+  created_at: { type: Date, default: Date.now },
 });
 
-module.exports = mongoose.model('Task', TaskSchema);
+module.exports = mongoose.model("Task", TaskSchema);

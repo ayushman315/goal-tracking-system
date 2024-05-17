@@ -32,6 +32,15 @@ const createTask = (token, taskData) => {
     headers: { Authorization: `Bearer ${token}` },
   });
 };
+const updateTaskStatus = (token, taskId, completed) => {
+  return axios.put(
+    `${API_URL}/tasks/${taskId}`,
+    {completed},
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
+}
 
 const getLogs = (token) => {
   return axios.get(`${API_URL}/logs`, {
@@ -40,6 +49,12 @@ const getLogs = (token) => {
 };
 
 const logTask = (token, logData) => {
+  return axios.post(`${API_URL}/logs`, logData, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+};
+//createlog
+const createLog = (token, logData) => {
   return axios.post(`${API_URL}/logs`, logData, {
     headers: { Authorization: `Bearer ${token}` },
   });
@@ -55,5 +70,7 @@ export default {
   getTasks,
   createTask,
   getLogs,
-  logTask
+  logTask,
+  createLog,
+  updateTaskStatus,
 };
