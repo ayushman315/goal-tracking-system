@@ -36,8 +36,8 @@ suggestions for the reminders also.
 
 ## API Endpoints
 ### Authentication Endpoints (/api/auth)
-POST /register: Register a new user.
-POST /login: Login an existing user.
+- POST /register: Register a new user.
+- POST /login: Login an existing user.
 
 ### Goal Endpoints (/api/goals)
 - POST /: Create a new goal.
@@ -46,14 +46,14 @@ POST /login: Login an existing user.
 - DELETE /:goalId: Delete an existing goal.
 
 ### Task Endpoints (/api/tasks)
-POST /: Create a new task.
-GET /:goalId: Retrieve all tasks belonging to a specific goal.
-PUT /:taskId: Update the status of an existing task.
-DELETE /:taskId: Delete an existing task.
+- POST /: Create a new task.
+- GET /:goalId: Retrieve all tasks belonging to a specific goal.
+- PUT /:taskId: Update the status of an existing task.
+- DELETE /:taskId: Delete an existing task.
 
 ### Log Endpoints (/api/logs)
-POST /: Create a new log entry for a task.
-GET /: Retrieve all log entries belonging to the authenticated user.
+- POST /: Create a new log entry for a task.
+- GET /: Retrieve all log entries belonging to the authenticated user.
 
 
 
