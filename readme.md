@@ -28,13 +28,13 @@ suggestions for the reminders also.
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/goal-tracking-system.git
+    git clone https://github.com/tushareshukla/goal-tracking-system.git
     ```
 
 2. Navigate to the backend directory:
 
     ```bash
-    cd projectname/backend
+    cd goal-tracking-system/backend
     ```
 
 3. Install dependencies:
