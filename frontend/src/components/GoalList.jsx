@@ -1,12 +1,12 @@
 import React from 'react';
 
-const GoalList = ({ goals }) => {
+const GoalList = ({ goals ,onSelectGoal}) => {
   return (
     <div>
       <h2>Goals</h2>
       <ul>
         {goals.map(goal => (
-          <li key={goal._id}>
+          <li key={goal._id}  onClick={() => onSelectGoal(goal._id)}>
             <h3>{goal.title}</h3>
             <p>{goal.description}</p>
             <p>Min Timeline: {new Date(goal.min_timeline).toLocaleDateString()}</p>
