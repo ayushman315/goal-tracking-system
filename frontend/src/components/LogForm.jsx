@@ -10,6 +10,7 @@ const LogForm = ({ token, taskId, fetchLogs }) => {
       await api.logTask(token, { task_id: taskId, status });
       fetchLogs();
     } catch (error) {
+        console.error(error);
       alert('Failed to log task');
     }
   };
