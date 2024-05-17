@@ -15,6 +15,7 @@ const Login = ({ setToken }) => {
     e.preventDefault();
     try {
       const response = await api.login(formData.email, formData.password);
+      localStorage.setItem('token', response.data.token);
       setToken(response.data.token);
     } catch (error) {
       alert('Login failed');

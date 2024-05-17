@@ -19,6 +19,9 @@ const Register = () => {
       alert('Registration successful');
     } catch (error) {
       alert('Registration failed');
+      console.log('====================================');
+      console.error(error);
+      console.log('====================================');
     }
   };
 

@@ -8,7 +8,7 @@ router.post('/', authenticateJWT, async (req, res) => {
 
   try {
     const goalCount = await Goal.countDocuments({ user_id: req.user.id });
-    if (goalCount >= 2) {
+    if (goalCount >= 5) {
       return res.status(400).json({ msg: 'User can only have up to 2 goals' });
     }
 
@@ -24,6 +24,7 @@ router.post('/', authenticateJWT, async (req, res) => {
     await goal.save();
     res.json(goal);
   } catch (err) {
+    console.error(err);
     res.status(500).send('Server error');
   }
 });

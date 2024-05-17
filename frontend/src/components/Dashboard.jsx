@@ -12,6 +12,8 @@ const Dashboard = ({ token }) => {
       setGoals(response.data);
     } catch (error) {
       alert('Failed to fetch goals');
+      console.error(error);
+
     }
   };
 

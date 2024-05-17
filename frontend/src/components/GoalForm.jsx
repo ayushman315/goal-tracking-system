@@ -17,9 +17,12 @@ const GoalForm = ({ token, fetchGoals }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await api.createGoal(token, formData);
+      const response = await api.createGoal(token, formData);
+      console.log(response.data); // handle the response as needed
       fetchGoals();
     } catch (error) {
+      console.log(response.data); // handle the response as needed
+      console.error(error);
       alert('Failed to create goal');
     }
   };
@@ -28,8 +31,11 @@ const GoalForm = ({ token, fetchGoals }) => {
     <form onSubmit={handleSubmit}>
       <input type="text" name="title" placeholder="Title" onChange={handleChange} />
       <textarea name="description" placeholder="Description" onChange={handleChange}></textarea>
+      <p>Min Timeline</p>
       <input type="date" name="min_timeline" onChange={handleChange} />
+      <p>Max Timeline</p>
       <input type="date" name="max_timeline" onChange={handleChange} />
+      <p>User Timeline</p>
       <input type="date" name="user_timeline" onChange={handleChange} />
       <button type="submit">Create Goal</button>
     </form>
