@@ -40,10 +40,10 @@ POST /register: Register a new user.
 POST /login: Login an existing user.
 
 ### Goal Endpoints (/api/goals)
-POST /: Create a new goal.
-GET /: Retrieve all goals belonging to the authenticated user.
-PUT /:goalId: Update an existing goal.
-DELETE /:goalId: Delete an existing goal.
+- POST /: Create a new goal.
+- GET /: Retrieve all goals belonging to the authenticated user.
+- PUT /:goalId: Update an existing goal.
+- DELETE /:goalId: Delete an existing goal.
 
 ### Task Endpoints (/api/tasks)
 POST /: Create a new task.
