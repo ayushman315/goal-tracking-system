@@ -25,9 +25,62 @@ suggestions for the reminders also.
 
 ## Installation
 
-1. Clone the repository: `git clone <repository-url>`
-2. Navigate to the project directory: `cd project-directory`
-3. Install dependencies: `npm install`
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/yourusername/projectname.git
+    ```
+
+2. Navigate to the backend directory:
+
+    ```bash
+    cd projectname/backend
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+4. Set up environment variables:
+   - Create a `.env` file in the `backend` directory.
+   - Define the following variables:
+     - `MONGO_URI`: MongoDB connection URI.
+     - `JWT_SECRET`: Secret key for JWT authentication.
+     - `PORT`: Port for the backend server (default is 3000).
+
+5. Start the backend server:
+
+    ```bash
+    npm run start
+    ```
+
+6. Navigate to the frontend directory:
+
+    ```bash
+    cd ../frontend
+    ```
+
+7. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+8. Set up environment variables:
+   - Create a `.env` file in the `frontend` directory.
+   - Define the following variable:
+     - `REACT_APP_API_URL`: Backend API URL (e.g., `http://localhost:3000/api`).
+
+9. Start the frontend development server:
+
+    ```bash
+    npm run dev
+    ```
+
+10. Access the application in your browser at `http://localhost:5172`.
+
 
 ## Usage
 
