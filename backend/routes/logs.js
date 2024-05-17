@@ -4,8 +4,9 @@ const Task = require('../models/Task');
 const authenticateJWT = require('../middleware/auth');
 const router = express.Router();
 
+// Inside the POST route
 router.post('/', authenticateJWT, async (req, res) => {
-  const { task_id, status } = req.body;
+  const { task_id, completed } = req.body;
 
   try {
     const task = await Task.findById(task_id);
@@ -16,7 +17,7 @@ router.post('/', authenticateJWT, async (req, res) => {
     const log = new Log({
       user_id: req.user.id,
       task_id,
-      status
+      status: completed ? "completed" : "missed",
     });
 
     await log.save();

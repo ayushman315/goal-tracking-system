@@ -1,17 +1,21 @@
 import React from "react";
 import api from "../services/api";
 
-const TaskList = ({ tasks, token }) => {
+const TaskList = ({ tasks}) => {
+  const token = localStorage.getItem('token');
   const handleTaskStatusChange = async (taskId, completed) => {
     try {
       // Call API to update task status
-      await api.updateTaskStatus(token, taskId, { completed }); // Update the task status
-      // await api.updateTaskStatus(token, taskId, completed);
-      // Log the action
-      // await api.createLog(token, { message: `Task ${completed}: ${taskId}` });
-      await api.createLog(token, { message: `Task ${completed ? 'completed' : 'missed'}: ${taskId}` });
+    const response =   await api.updateTaskStatus(token, taskId,  completed );
+    console.log(response.data);
+     // Update the task status
+      
+      await api.createLog(token, { task_id: taskId, completed: completed ? "completed" : "missed" });
     } catch (error) {
       console.error(error);
+      console.log(error);
+      console.log(error.response.data);
+      console.log(response.data);
       alert("Failed to update task status");
     }
   };
