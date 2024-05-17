@@ -1,0 +1,12 @@
+{
+  "name": "goal-tracking-system",
+  "version": "1.0.0",
+  "description": "basic goal tracking system, where particular goal can be defined and goal will have multiple task where min and max timeline can be defined and logs will be maintained",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
