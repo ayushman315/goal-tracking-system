@@ -35,7 +35,7 @@ suggestions for the reminders also.
 2. Open your browser and visit `http://localhost:3000`
 
 ## API Endpoints
-# Authentication Endpoints (/api/auth)
+### Authentication Endpoints (/api/auth)
 POST /register: Register a new user.
 POST /login: Login an existing user.
 # Goal Endpoints (/api/goals)
