@@ -6,6 +6,7 @@ import TaskForm from './TaskForm';
 import TaskList from './TaskList';
 import LogForm from './LogForm';
 import LogList from './LogList';
+// import"../"
 
 const Dashboard = ({ token }) => {
   const [goals, setGoals] = useState([]);
