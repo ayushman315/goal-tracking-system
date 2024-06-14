@@ -5,7 +5,7 @@
 ## Overview
 
 The technical design document outlines the architecture and database design for the project. It provides an overview of the system's components, their interactions, and the data schema used to store and manage information.
-[Diagram](https://excalidraw.com/#json=x6kRTrLASct--trU3zcfd,SSE4UlOAB09K5_jn2I10Dw)
+[Diagram]((https://miro.com/app/board/uXjVK7mi7Eg=/))
 [Video](https://www.youtube.com/watch?v=dG0jJLYozAY)
 
 
